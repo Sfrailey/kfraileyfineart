@@ -1,0 +1,309 @@
+/*
+ * Kristen Frailey Fine Art: design tokens and base styles.
+ *
+ * Palette consolidated from the previous site: white ground, the warm gray
+ * of the KF logo (#7a7575), slate body text (#454f5e) and near-black
+ * headings (#0f172a), plus one warm off-white for quiet bands.
+ */
+
+:root {
+  /* Color */
+  --color-bg: #ffffff;
+  --color-surface: #f7f5f2;
+  --color-ink: #1d2027;
+  --color-text: #454f5e;
+  --color-muted: #686363;
+  --color-brand: #7a7575;
+  --color-line: #e2ddd7;
+  --color-button: #5c5858;
+  --color-button-hover: #3b3838;
+  --color-sold: #a0392b;
+  --color-error: #a0392b;
+  --color-success: #2f6b45;
+  --color-focus: #1d2027;
+
+  /* Type */
+  --font-serif: var(--font-bitter), Georgia, 'Times New Roman', serif;
+  --font-sans: var(--font-raleway), 'Segoe UI', system-ui, sans-serif;
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-h3: 1.25rem;
+  --text-h2: clamp(1.5rem, 1.25rem + 0.9vw, 1.875rem);
+  --text-h1: clamp(1.875rem, 1.45rem + 1.6vw, 2.625rem);
+  --leading-body: 1.7;
+  --leading-heading: 1.2;
+
+  /* Space (4px based) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --section-space: clamp(3rem, 2rem + 4vw, 6rem);
+  --gutter: clamp(1rem, 0.5rem + 3vw, 3rem);
+
+  /* Widths */
+  --width-text: 38rem;
+  --width-content: 72rem;
+  --width-wide: 88rem;
+
+  /* Misc */
+  --radius: 2px;
+  --transition: 160ms ease;
+  --header-height: 5.5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+/* Lock page scroll while the lightbox is open. */
+html:has(dialog[open]) {
+  overflow: hidden;
+}
+
+/* ---------- Site base (scoped so the embedded Studio is unaffected) ---------- */
+
+.site {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-body);
+  /* Raleway defaults to old-style figures; lining figures keep sizes like 18×24 legible. */
+  font-variant-numeric: lining-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site main {
+  flex: 1;
+}
+
+.site :where(h1, h2, h3) {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: var(--leading-heading);
+  letter-spacing: -0.005em;
+  text-wrap: balance;
+}
+
+.site h1 {
+  font-size: var(--text-h1);
+}
+
+.site h2 {
+  font-size: var(--text-h2);
+}
+
+.site h3 {
+  font-size: var(--text-h3);
+}
+
+.site p {
+  margin: 0 0 1em;
+  text-wrap: pretty;
+}
+
+.site p:last-child {
+  margin-bottom: 0;
+}
+
+.site img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.site a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+  transition: color var(--transition), text-decoration-color var(--transition);
+}
+
+.site a:hover {
+  color: var(--color-ink);
+  text-decoration-color: currentColor;
+}
+
+.site :focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+  border-radius: var(--radius);
+}
+
+.site ::selection {
+  background: var(--color-brand);
+  color: #fff;
+}
+
+/* ---------- Layout primitives ---------- */
+
+.container {
+  width: 100%;
+  max-width: calc(var(--width-content) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: calc(var(--width-wide) + 2 * var(--gutter));
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+.prose {
+  max-width: var(--width-text);
+}
+
+/* Centered heading with the short rule carried over from the previous site. */
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+  text-align: center;
+}
+
+.section-heading::after {
+  content: '';
+  width: 3rem;
+  height: 2px;
+  background: var(--color-ink);
+}
+
+.section-heading p {
+  max-width: var(--width-text);
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* Text link with an arrow, used for "view all" style links. */
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.text-link::after {
+  content: '→';
+  transition: transform var(--transition);
+}
+
+.text-link:hover::after {
+  transform: translateX(3px);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 2.875rem;
+  padding: 0 var(--space-6);
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--color-button);
+  color: #fff;
+  font: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+.button:hover {
+  background: var(--color-button-hover);
+}
+
+.button[disabled] {
+  opacity: 0.65;
+  cursor: progress;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 100;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-ink);
+  color: #fff !important;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site *,
+  .site *::before,
+  .site *::after {
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.empty-state {
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.not-found-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4) var(--space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

@@ -1,0 +1,66 @@
+/*
+ * Gallery wall: equal cells in a grid, each painting contained (never cropped)
+ * and resting on a shared baseline so captions line up across a row. On
+ * phones each painting is shown at its natural proportions, full width.
+ */
+.gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-7) clamp(1.5rem, 1rem + 2vw, 3rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.figure {
+  margin: 0;
+}
+
+.open {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--ar);
+  transition: opacity var(--transition);
+}
+
+.open:hover .image {
+  opacity: 0.9;
+}
+
+@media (min-width: 40em) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Fixed-shape cell; the painting is contained inside it, resting on the bottom edge. */
+  .open {
+    position: relative;
+    aspect-ratio: 5 / 4;
+  }
+
+  /* Two classes so this outranks the global `.site img { height: auto }`. */
+  .open .image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
+
+@media (min-width: 64em) {
+  .gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

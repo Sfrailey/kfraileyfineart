@@ -1,0 +1,111 @@
+{
+  "$comment": "Content migrated from https://kfraileyfineart.com (WordPress). Every artwork entry pairs an image file with the caption WordPress displayed next to that same image on the given page; 'wpCaption' preserves that caption verbatim. Entries marked captionSource=media-library had no caption on the page; their title comes from the caption stored on the same file in the WordPress media library. See docs/MIGRATION_NOTES.md.",
+  "uploadsBase": "https://kfraileyfineart.com/wp-content/uploads/",
+  "artworks": [
+    { "id": "magic-hour", "title": "Magic Hour", "dimensions": "20 × 40 in", "medium": "Oil on board", "availability": "unknown", "source": "2026/03/Magic-Hour.jpg", "wpPage": "elementor-page-2022", "wpMediaId": 2224, "wpCaption": "Magic Hour – 20x40in – oil on board", "captionSource": "media-library" },
+    { "id": "light-show", "title": "Light Show", "dimensions": "18 × 24 in", "medium": "Oil on board", "availability": "unknown", "source": "2026/03/KristenColor2.jpg", "wpPage": "elementor-page-2022", "wpMediaId": 2231, "wpCaption": "Light Show – 18x24in – oil on board", "captionSource": "media-library" },
+    { "id": "superior-glow", "title": "Superior Glow", "dimensions": "30 × 40 in", "medium": "Oil on canvas", "availability": "sold", "source": "2025/06/K-Frailey-Mountain-032125-R-1-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2036, "wpCaption": "Superior Glow – 30×40 – Oil on canvas – Sold" },
+    { "id": "corona-arch", "title": "Corona Arch", "dimensions": "11 × 14 in", "medium": "Oil on linen", "availability": "unknown", "source": "2025/12/corona.jpg", "wpPage": "elementor-page-2022", "wpMediaId": 2210, "wpCaption": "Corona Arch – 11×14 – Oil on Linen" },
+    { "id": "dawn-sentinel", "title": "Dawn Sentinel", "dimensions": "24 × 36 in", "medium": "Oil on canvas", "availability": "sold", "source": "2025/06/Dawn-Sentinel-jpeg-1-min-1.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2029, "wpCaption": "Dawn Sentinel – 24×36 – Oil on canvas – Sold" },
+    { "id": "wasatch-in-gold", "title": "Wasatch in Gold", "dimensions": "15 × 30 in", "medium": "Oil on canvas", "availability": "sold", "source": "2025/06/Wasatch_in_Gold-new-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2039, "wpCaption": "Wasatch in Gold – 15x30in – Oil on canvas – Sold" },
+    { "id": "sunrise-on-the-castle", "title": "Sunrise on the Castle", "dimensions": "9 × 12 in", "medium": "Oil on canvas", "availability": "sold", "source": "2025/06/IMG_7323-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2035, "wpCaption": "Sunrise on the Castle – 9×12 – Oil on canvas – Sold" },
+    { "id": "paintbrush", "title": "Paintbrush", "dimensions": "10 × 10 in", "medium": "Oil on board", "availability": "sold", "source": "2025/06/IMG_4037-1.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2045, "wpCaption": "Paintbrush – 10×10 – Oil on board – Sold" },
+    { "id": "dreamland", "title": "Dreamland", "dimensions": "20 × 20 in", "medium": "Oil on canvas", "availability": "sold", "source": "2025/06/IMG_5956-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2033, "wpCaption": "Dreamland – 20×20 – Oil on canvas – Sold" },
+    { "id": "the-lone-saguaro", "title": "The Lone Saguaro", "dimensions": "8 × 10 in", "medium": "Oil on board", "availability": "sold", "source": "2025/06/IMG_5262-1.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2046, "wpCaption": "The Lone Saguaro – 8×10 – Oil on board – Sold" },
+    { "id": "two-medicine", "title": "Two Medicine", "dimensions": "18 × 24 in", "medium": "Oil on canvas", "availability": "unknown", "source": "2025/06/Two-Medicine-2-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2051, "wpCaption": "Two Medicine – 18×24 – Oil on canvas" },
+    { "id": "fiery-furnace", "title": "Fiery Furnace", "dimensions": "18 × 36 in", "medium": "Oil on canvas", "availability": "sold", "source": "2025/06/Fiery-Furnace-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2030, "wpCaption": "Fiery Furnace – 18×36 – Oil on canvas – Sold" },
+    { "id": "castle-blues", "title": "Castle Blues", "dimensions": "20 × 24 in", "medium": "Oil on canvas", "availability": "unknown", "source": "2025/06/IMG_7143-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2034, "wpCaption": "Castle Blues – 20×24 – Oil on canvas" },
+    { "id": "supreme-day", "title": "Supreme Day", "dimensions": "36 × 36 in", "medium": "Oil on canvas", "availability": "unknown", "source": "2025/12/IMG_9856.jpg", "wpPage": "elementor-page-2022", "wpMediaId": 2212, "wpCaption": "Supreme Day – 36×36 – oil on canvas" },
+    { "id": "light-show-study", "title": "Light Show (study)", "dimensions": "9 × 12 in", "medium": "Oil on board", "availability": "unknown", "source": "2025/12/IMG_9823.jpg", "wpPage": "elementor-page-2022", "wpMediaId": 2211, "wpCaption": "Light Show (study) – 9x12in – oil on board" },
+    { "id": "castle-valley", "title": "Castle Valley", "dimensions": "20 × 24 in", "medium": "Oil on canvas", "availability": "sold", "source": "2025/06/IMG_0364-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2031, "wpCaption": "Castle Valley – 20×24 – Oil on canvas – Sold" },
+    { "id": "big-cottonwood-creek", "title": "Big Cottonwood Creek", "dimensions": "14 × 18 in", "medium": "Oil on canvas", "availability": "sold", "source": "2025/06/IMG_0944-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2032, "wpCaption": "Big Cottonwood Creek – 14×18 – Oil on canvas- Sold" },
+    { "id": "blue-boots", "title": "Blue Boots", "dimensions": "24 × 30 in", "medium": "Oil on canvas", "availability": "unknown", "source": "2025/06/KristenColor1-min.jpeg", "wpPage": "elementor-page-2022", "wpMediaId": 2037, "wpCaption": "Blue Boots – 24×30 – Oil on canvas" },
+
+    { "id": "sunrise-on-half-dome", "title": "Sunrise on Half Dome", "dimensions": "8 × 8 in", "medium": "Oil on board", "availability": "sold", "source": "2025/07/Sunrise-on-Half-Dome.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2077, "wpCaption": "“Sunrise on Half Dome” – 8x8in – Oil on Board – Sold" },
+    { "id": "pink-mesa", "title": "Pink Mesa", "dimensions": "8 × 8 in", "medium": "Oil on board", "availability": "unknown", "source": "2025/07/IMG_3044.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2093, "wpCaption": "“Pink Mesa” – 8x8in – Oil on Bard", "note": "Caption read 'Oil on Bard'; corrected to 'Oil on board' (every other plein air piece is oil on board)." },
+    { "id": "windwalker-sunrise", "title": "Windwalker Sunrise", "dimensions": "8 × 10 in", "medium": "Oil on board", "availability": "unknown", "source": "2025/07/IMG_6291.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2090, "wpCaption": "“Windwalker Sunrise” – 8x10in – Oil on Board" },
+    { "id": "looking-down-the-valley", "title": "Looking Down the Valley", "dimensions": "11 × 14 in", "medium": "Oil on linen", "availability": "sold", "source": "2025/07/Looking-Down-the-Valley.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2088, "wpCaption": "“Looking Down the Valley” – 11x14in – Oil on Linen – Sold" },
+    { "id": "mt-superior", "title": "Mt Superior", "dimensions": "8 × 10 in", "medium": "Oil on board", "availability": "unknown", "source": "2025/07/IMG_2360.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2094, "wpCaption": "“Mt Superior” – 8x10in – Oil on Board" },
+    { "id": "boulder-canyon-creek", "title": "Boulder Canyon Creek", "dimensions": "9 × 12 in", "medium": "Oil on board", "availability": "unknown", "source": "2025/07/IMG_5456-min.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2089, "wpCaption": "“Boulder Canyon Creek” – 9x12in – Oil on Board" },
+    { "id": "rainy-day", "title": "Rainy Day", "dimensions": "9 × 12 in", "medium": "Oil on board", "availability": "unknown", "source": "2025/07/IMG_6419.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2095, "wpCaption": "“Rainy Day” – 9x12in – Oil on Board" },
+    { "id": "moody-colorado", "title": "Moody Colorado", "dimensions": "9 × 12 in", "medium": "Oil on board", "availability": "unknown", "source": "2025/07/IMG_1835.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2092, "wpCaption": "“Moody Colorado” – 9x12in – Oil on Board" },
+    { "id": "yosemite-valley", "title": "Yosemite Valley", "dimensions": "8 × 8 in", "medium": "Oil on board", "availability": "sold", "source": "2025/07/Yosemite-Valley.jpeg", "wpPage": "elementor-page-2075", "wpMediaId": 2078, "wpCaption": "“Yosemite Valley” – 8x8in – Oil on Board – Sold" },
+    { "id": "dog-lake", "title": "Dog Lake", "dimensions": "8 × 10 in", "medium": "Oil on board", "availability": "unknown", "source": "2025/12/dog_lake-1.jpg", "wpPage": "elementor-page-2075", "wpMediaId": 2206, "wpCaption": "“Dog Lake” – 8x10in – Oil on Board" }
+  ],
+  "galleries": [
+    {
+      "id": "gallery-portfolio",
+      "title": "Portfolio",
+      "artworks": ["magic-hour", "light-show", "superior-glow", "corona-arch", "dawn-sentinel", "wasatch-in-gold", "sunrise-on-the-castle", "paintbrush", "dreamland", "the-lone-saguaro", "two-medicine", "fiery-furnace", "castle-blues", "supreme-day", "light-show-study", "castle-valley", "big-cottonwood-creek", "blue-boots"]
+    },
+    {
+      "id": "gallery-plein-air",
+      "title": "Works in Plein Air",
+      "artworks": ["sunrise-on-half-dome", "pink-mesa", "windwalker-sunrise", "looking-down-the-valley", "mt-superior", "boulder-canyon-creek", "rainy-day", "moody-colorado", "yosemite-valley", "dog-lake"]
+    }
+  ],
+  "images": {
+    "logo": { "source": "2025/05/Logo_new-removebg-preview-2.png", "alt": "Kristen Frailey Fine Art", "crop": { "top": 0.21, "bottom": 0.22, "left": 0.08, "right": 0.05 } },
+    "icon": { "source": "2025/05/Logo_new-removebg-preview-2.png", "alt": "KF", "crop": { "top": 0.21, "bottom": 0.22, "left": 0.08, "right": 0.6 } },
+    "hero": { "source": "2026/03/Magic-Hour.jpg", "alt": "Magic Hour: a painted alpine valley at sunset, a peak glowing orange above evergreens and a winding trail", "hotspot": { "x": 0.5, "y": 0.42, "width": 0.9, "height": 0.6 } },
+    "statementPortrait": { "source": "2025/05/IMG_4350-1-scaled-e1749179572525.jpeg", "alt": "Kristen Frailey painting at an easel on a rocky mountain ridge high above a valley" },
+    "bioPortrait": { "source": "2025/05/Arches-NP-Christine-Nov-2023-3-1-min.jpeg", "alt": "Kristen Frailey smiling beside her easel on a trail among red rock formations in Arches National Park" },
+    "contactImage": { "source": "2025/07/IMG_6125-1.jpeg", "alt": "Pet portrait of a black and white dog in tall green grass, wearing a pink collar with a flower" },
+    "contactSecondary": { "source": "2025/12/IMG_9823.jpg", "alt": "Light Show (study): a canyon landscape painted in warm evening light" },
+    "shareImage": { "source": "2025/06/K-Frailey-Mountain-032125-R-1-min.jpeg", "alt": "Superior Glow, a painting by Kristen Frailey" }
+  },
+  "siteSettings": {
+    "title": "Kristen Frailey Fine Art",
+    "footerText": "Copyright 2025 Kristen Frailey. All Rights Reserved",
+    "socialLinks": [{ "platform": "Instagram", "url": "https://www.instagram.com/kristen.and.color/" }],
+    "seoDescription": "Art of Utah and the West by Kristen Frailey"
+  },
+  "homePage": {
+    "heroText": "Art of Utah and the West by Kristen Frailey",
+    "featuredHeading": "Featured Works",
+    "featuredArtworks": ["superior-glow", "sunrise-on-the-castle", "wasatch-in-gold"]
+  },
+  "aboutPage": {
+    "title": "About",
+    "statementHeading": "Art Statement",
+    "statement": [
+      "Kristen Frailey is a landscape painter whose work seeks to understand the drama of light and the connections she has found in outdoor spaces.",
+      "Her art highlights the wild beauty of the West through her use of vibrant color and sharp detail. An avid outdoorswoman, Kristen’s work showcases the joy she experiences in her travels through rock and snow.",
+      "Many of her larger pieces start as a sketch or quick painting done en plein air to capture the feeling and atmosphere of the moment before bringing it back into her studio to develop those ideas on a larger scale.",
+      "Observation and memory manifest in the physical form of paint strokes on canvas. Her work speaks to those who find joy and meaning in the land around them."
+    ],
+    "bioHeading": "Bio",
+    "bio": [
+      "Kristen Frailey grew up in the foothills of the southeast and went to college to pursue a career in healthcare while chasing her artistic passions on the side.",
+      "She moved to Utah in 2021 to seek out a closer connection to the mountains and places that inspire her work.",
+      "While primarily self taught, she has learned from a community of traditional painters, finding mentorship in artists such as Kathryn Stats and Mark Boedges. Kristen began to sell her work in 2022 and has since participated in festivals and shows across Utah."
+    ],
+    "recognitionHeading": "Representation and Recognition",
+    "recognition": [
+      "South Salt Lake Mural Fest Apprentice 2024",
+      "Alta Community Enrichment Muralist 2024",
+      "Harrington Art Studio 2025",
+      "Ogden Arts Festival Artist 2025",
+      "Jackson Hole Art Fair Artist 2025",
+      "Sweet Pea Arts Festival Artist 2025"
+    ]
+  },
+  "contactPage": {
+    "title": "Contact",
+    "intro": [
+      "Interested in commissioning a piece? Let’s chat! One of my favorite things about art is creating things that people can connect with. I specialize in landscapes and pet portraits.",
+      "Pricing scale is listed below. Feel free to reach out to me with any questions you have! I would love to help bring your vision to life."
+    ],
+    "pricingHeading": "Pricing",
+    "pricing": [
+      { "size": "8 × 8", "price": "$320" },
+      { "size": "8 × 10", "price": "$400" },
+      { "size": "9 × 12", "price": "$525" },
+      { "size": "12 × 12", "price": "$650" },
+      { "size": "11 × 14", "price": "$700" },
+      { "size": "16 × 20", "price": "$950" },
+      { "size": "18 × 24", "price": "$1200" },
+      { "size": "20 × 24", "price": "$1600" }
+    ]
+  }
+}

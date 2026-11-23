@@ -1,0 +1,38 @@
+{
+  "name": "kfrailey",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "typegen": "sanity schema extract --path schema.json --force && sanity typegen generate",
+    "migrate": "node --env-file-if-exists=.env.local scripts/migrate-wordpress.mts",
+    "check": "npm run typecheck && npm run lint && npm run build"
+  },
+  "dependencies": {
+    "@sanity/client": "^8.17.0",
+    "@sanity/icons": "^5.4.0",
+    "@sanity/image-url": "^2.2.0",
+    "next": "16.4.6",
+    "next-sanity": "^13.5.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sanity": "^6.24.0",
+    "server-only": "^0.0.1",
+    "styled-components": "^6.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}

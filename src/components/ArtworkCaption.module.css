@@ -1,0 +1,50 @@
+.caption {
+  display: grid;
+  gap: 0.125rem;
+  padding-top: var(--space-3);
+  line-height: 1.45;
+}
+
+.caption p {
+  margin: 0;
+}
+
+.title {
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+}
+
+.meta {
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  letter-spacing: 0.02em;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Small red dot: the traditional gallery mark for a sold painting. */
+.status[data-status='sold']::before {
+  content: '';
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--color-sold);
+}
+
+.caption[data-size='lg'] .title {
+  font-size: var(--text-h3);
+}
+
+.caption[data-size='lg'] .meta,
+.caption[data-size='lg'] .status {
+  font-size: var(--text-sm);
+}

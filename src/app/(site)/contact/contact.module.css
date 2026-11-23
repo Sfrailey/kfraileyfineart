@@ -1,0 +1,207 @@
+.intro {
+  display: grid;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.introText {
+  max-width: var(--width-text);
+  font-size: var(--text-lg);
+}
+
+.pricing {
+  margin-top: var(--space-6);
+  font-size: var(--text-base);
+}
+
+.pricing h2 {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-h3);
+}
+
+.pricing dl {
+  max-width: 22rem;
+  margin: 0;
+}
+
+/* Dotted leader between size and price, replacing the old typed dashes. */
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding-block: var(--space-1);
+}
+
+.priceRow::after {
+  content: '';
+  order: 1;
+  flex: 1;
+  border-bottom: 1px dotted var(--color-brand);
+  transform: translateY(-0.3em);
+}
+
+.priceRow dt {
+  order: 0;
+}
+
+.priceRow dd {
+  order: 2;
+  margin: 0;
+  color: var(--color-ink);
+  font-weight: 500;
+}
+
+.formSection {
+  max-width: 40rem;
+  margin: var(--section-space) auto 0;
+  scroll-margin-top: var(--space-6);
+}
+
+.formSection > h2 {
+  margin-bottom: var(--space-5);
+  text-align: center;
+}
+
+.form {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.row {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.field label {
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid #8d8781;
+  border-radius: var(--radius);
+  background: #fff;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  transition: border-color var(--transition);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #736e6e;
+}
+
+.field input:hover,
+.field textarea:hover {
+  border-color: var(--color-muted);
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  border-color: var(--color-ink);
+  outline: 2px solid var(--color-focus);
+  outline-offset: 1px;
+}
+
+.field [aria-invalid='true'] {
+  border-color: var(--color-error);
+}
+
+.fieldError {
+  margin: 0;
+  color: var(--color-error);
+  font-size: var(--text-sm);
+}
+
+.fieldError::before {
+  content: '! ';
+  font-weight: 700;
+}
+
+.required {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--text-xs);
+}
+
+.form button {
+  justify-self: start;
+}
+
+.paintingNote {
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-left: 2px solid var(--color-brand);
+}
+
+.paintingNote p {
+  margin: 0;
+}
+
+.trap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.statusRegion:focus {
+  outline: none;
+}
+
+.success,
+.error {
+  margin-bottom: var(--space-5);
+  padding: var(--space-4);
+  border-left: 3px solid;
+  background: var(--color-surface);
+}
+
+.success {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+
+.error {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.secondary {
+  max-width: 45rem;
+  margin: var(--section-space) auto 0;
+}
+
+@media (min-width: 40em) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 52em) {
+  .intro {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
+  }
+}

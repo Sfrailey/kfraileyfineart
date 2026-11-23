@@ -1,0 +1,57 @@
+.sections {
+  display: grid;
+  gap: var(--section-space);
+}
+
+.section {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.text {
+  max-width: var(--width-text);
+}
+
+.text h2 {
+  margin-bottom: var(--space-4);
+}
+
+.recognition {
+  margin-top: var(--space-7);
+}
+
+.recognition ul {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.recognition li {
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-line);
+}
+
+@media (min-width: 52em) {
+  .section {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  /* Portraits stay in view alongside longer text. */
+  .media {
+    position: sticky;
+    top: var(--space-6);
+  }
+
+  .text {
+    padding-top: var(--space-2);
+  }
+}
