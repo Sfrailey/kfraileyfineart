@@ -1,10 +1,12 @@
 .sections {
   display: grid;
-  gap: var(--section-space);
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(3rem, 2rem + 4vw, 6rem);
 }
 
 .section {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-6);
 }
 
@@ -14,44 +16,90 @@
 }
 
 .text {
-  max-width: var(--width-text);
+  max-width: 34rem;
+  line-height: 1.65;
 }
 
 .text h2 {
   margin-bottom: var(--space-4);
 }
 
+/* Short rule under each heading, echoing the page title. */
+.text h2::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-top: var(--space-3);
+  background: var(--color-brand);
+}
+
+.text p {
+  margin-bottom: 0.85em;
+}
+
+/* Opening line reads as a lead-in. */
+.text h2 + p {
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  line-height: 1.55;
+}
+
+/* Recognition: its own band so it doesn't trail under the Bio. */
 .recognition {
-  margin-top: var(--space-7);
+  padding: clamp(2rem, 1.5rem + 2vw, 3rem);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+}
+
+.recognition h2 {
+  margin-bottom: var(--space-5);
+  text-align: center;
 }
 
 .recognition ul {
   display: grid;
-  gap: var(--space-2);
+  gap: 0 var(--space-7);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .recognition li {
-  padding-bottom: var(--space-2);
+  padding-block: var(--space-3);
   border-bottom: 1px solid var(--color-line);
 }
 
+@media (min-width: 40em) {
+  .recognition ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 52em) {
+  /* Photo and text side by side, centred on each other; alternate sides. */
   .section {
     grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
     gap: clamp(2.5rem, 5vw, 5rem);
-    align-items: start;
+    align-items: center;
   }
 
-  /* Portraits stay in view alongside longer text. */
-  .media {
-    position: sticky;
-    top: var(--space-6);
+  .section[data-reverse] {
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
   }
 
-  .text {
-    padding-top: var(--space-2);
+  .section[data-reverse] .media {
+    order: 2;
+  }
+
+  .section[data-reverse] .text {
+    justify-self: end;
+  }
+
+  /* Keep a tall portrait from towering over a short block of text. */
+  .image {
+    max-height: 36rem;
+    object-fit: cover;
   }
 }

@@ -27,6 +27,7 @@ function AboutSection({
   image,
   imageAlt,
   preload,
+  reverse,
   children,
 }: {
   id: string
@@ -35,17 +36,18 @@ function AboutSection({
   image: ImageValue | null
   imageAlt: string
   preload?: boolean
+  reverse?: boolean
   children?: React.ReactNode
 }) {
   if (!heading && !body?.length && !hasAsset(image) && !children) return null
   return (
-    <section className={styles.section} aria-labelledby={heading ? id : undefined}>
+    <section className={styles.section} data-reverse={reverse || undefined} aria-labelledby={heading ? id : undefined}>
       <div className={styles.media}>
         {hasAsset(image) ? (
           <SanityImage
             image={image}
             fallbackAlt={imageAlt}
-            sizes="(max-width: 52em) 100vw, 40vw"
+            sizes="(max-width: 52em) 100vw, 480px"
             preload={preload}
             className={styles.image}
           />
@@ -83,18 +85,18 @@ export default async function AboutPage() {
             body={about.bio}
             image={about.bioImage}
             imageAlt="Kristen Frailey"
-          >
-            {recognition.length > 0 ? (
-              <div className={styles.recognition}>
-                {about.recognitionHeading ? <h2 id="recognition">{about.recognitionHeading}</h2> : null}
-                <ul aria-labelledby={about.recognitionHeading ? 'recognition' : undefined}>
-                  {recognition.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </AboutSection>
+            reverse
+          />
+          {recognition.length > 0 ? (
+            <section className={styles.recognition} aria-labelledby={about.recognitionHeading ? 'recognition' : undefined}>
+              {about.recognitionHeading ? <h2 id="recognition">{about.recognitionHeading}</h2> : null}
+              <ul>
+                {recognition.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
         </div>
       ) : null}
     </div>

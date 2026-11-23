@@ -1,3 +1,4 @@
+import { cacheLife } from 'next/cache'
 import Link from 'next/link'
 
 import { FALLBACK_SITE_NAME, NAV_ITEMS } from '@/lib/site'
@@ -6,21 +7,19 @@ import type { SiteSettings } from '@/sanity/types'
 
 import { SanityImage } from './SanityImage'
 import styles from './SiteFooter.module.css'
+import { SocialIcon } from './SocialIcon'
 
-function SocialIcon({ platform }: { platform: string }) {
-  if (platform === 'Instagram') {
-    return (
-      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6">
-        <rect x="3" y="3" width="18" height="18" rx="5" />
-        <circle cx="12" cy="12" r="4" />
-        <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
-      </svg>
-    )
-  }
-  return null
+/** Current year, cached so the footer stays prerenderable; refreshes daily. */
+async function currentYear() {
+  'use cache'
+  cacheLife('days')
+  return new Date().getFullYear()
 }
 
-export function SiteFooter({ settings }: { settings: SiteSettings | null }) {
+export async function SiteFooter({ settings }: { settings: SiteSettings | null }) {
+  const year = await currentYear()
+  // Keep the copyright current without anyone editing it in Sanity each January.
+  const footerText = settings?.footerText?.replace(/\b(?:19|20)\d{2}\b/, String(year))
   const name = settings?.title || FALLBACK_SITE_NAME
   const logo = settings?.logo
   const socialLinks = settings?.socialLinks?.filter((l) => l.url && l.platform) ?? []
@@ -72,7 +71,7 @@ export function SiteFooter({ settings }: { settings: SiteSettings | null }) {
               ))}
             </ul>
           ) : null}
-          {settings?.footerText ? <p className={styles.copyright}>{settings.footerText}</p> : null}
+          {footerText ? <p className={styles.copyright}>{footerText}</p> : null}
         </div>
       </div>
     </footer>
