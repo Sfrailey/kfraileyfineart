@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Bitter, Raleway } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 
 import { FALLBACK_SITE_NAME } from '@/lib/site'
 import { siteUrl } from '@/sanity/env'
@@ -35,7 +36,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${bitter.variable} ${raleway.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
