@@ -22,21 +22,18 @@ export async function sendContactEmail(values: ContactValues): Promise<SendResul
     return { ok: false, reason: 'not-configured' }
   }
 
-  const subject = values.painting
-    ? `Website inquiry about "${values.painting}" from ${values.name}`
-    : `Website inquiry from ${values.name}`
+  const isInquiry = values.type === 'inquiry'
+  const subject = !isInquiry
+    ? `Commission request from ${values.name}`
+    : values.painting
+      ? `Website inquiry about "${values.painting}" from ${values.name}`
+      : `Website inquiry from ${values.name}`
 
-  const text = [
-    `Name: ${values.name}`,
-    `Email: ${values.email}`,
-    values.painting ? `Painting: ${values.painting}` : null,
-    '',
-    'Timeline:',
-    values.timeline,
-    '',
-    'Questions / comments:',
-    values.message || '(none)',
-  ]
+  const details = isInquiry
+    ? [values.painting ? `Painting: ${values.painting}` : null, '', 'Message:', values.message]
+    : ['Type: Commission', '', 'Timeline:', values.timeline, '', 'Questions / comments:', values.message || '(none)']
+
+  const text = [`Name: ${values.name}`, `Email: ${values.email}`, ...details]
     .filter((line) => line !== null)
     .join('\n')
 

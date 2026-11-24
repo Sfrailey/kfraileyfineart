@@ -110,6 +110,103 @@ a.card {
   text-underline-offset: 0.2em;
 }
 
+/* About / Contact: one section each beneath the galleries, picture then text. */
+.pages {
+  display: grid;
+  gap: var(--section-space);
+  padding-block: var(--section-space);
+}
+
+.pageSection {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+}
+
+.pageImage {
+  width: 100%;
+  height: auto;
+}
+
+.pageText {
+  max-width: 34rem;
+  line-height: 1.65;
+}
+
+.pageText h2 {
+  margin-bottom: var(--space-4);
+}
+
+/* Short rule under each heading, matching the About page. */
+.pageText h2::after {
+  content: '';
+  display: block;
+  width: 2.5rem;
+  height: 2px;
+  margin-top: var(--space-3);
+  background: var(--color-brand);
+}
+
+/* The opening of the bio / contact intro, clipped with an ellipsis. */
+.excerpt {
+  display: -webkit-box;
+  margin: 0 0 var(--space-4);
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+}
+
+/* Closing call to action: a quiet band leading to the contact page. */
+.cta {
+  padding-block: clamp(2.5rem, 2rem + 3vw, 4.5rem);
+  text-align: center;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-line);
+}
+
+.cta h2 {
+  margin: 0 auto var(--space-5);
+  max-width: 30rem;
+  font-size: var(--text-h2);
+  text-wrap: balance;
+}
+
+.ctaButton {
+  min-height: 3.25rem;
+  padding-inline: var(--space-7);
+  background: var(--color-ink);
+  font-size: var(--text-base);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.12);
+}
+
+.ctaButton:hover {
+  background: var(--color-button);
+}
+
+.ctaButton::after {
+  content: '→';
+  transition: transform var(--transition);
+}
+
+.ctaButton:hover::after {
+  transform: translateX(3px);
+}
+
+@media (min-width: 52em) {
+  .pageSection {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  /* Keep a tall portrait from towering over the short excerpt. */
+  .pageImage {
+    max-height: 30rem;
+    object-fit: cover;
+  }
+}
+
 @media (min-width: 40em) {
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));

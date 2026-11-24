@@ -5,9 +5,10 @@ import { FeaturedWorks } from '@/components/FeaturedWorks'
 import { PageHeading } from '@/components/PageHeading'
 import { SanityImage } from '@/components/SanityImage'
 import { pageMetadata } from '@/lib/metadata'
+import { toParagraphs } from '@/lib/plainText'
 import { GALLERIES } from '@/lib/site'
 import { hasAsset } from '@/sanity/image'
-import { getGallery, getHomePage } from '@/sanity/loaders'
+import { getAboutPage, getGallery, getHomePage } from '@/sanity/loaders'
 
 import styles from './home.module.css'
 
@@ -17,7 +18,15 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const [home, ...galleries] = await Promise.all([getHomePage(), ...GALLERIES.map((g) => getGallery(g.id))])
+  const [home, about, ...galleries] = await Promise.all([
+    getHomePage(),
+    getAboutPage(),
+    ...GALLERIES.map((g) => getGallery(g.id)),
+  ])
+  const aboutTitle = about?.title || 'About'
+  const aboutExcerpt =
+    toParagraphs(about?.bio?.length ? about.bio : about?.statement).join(' ') || 'Meet the artist behind the paintings.'
+  const aboutImage = hasAsset(about?.bioImage) ? about.bioImage : (about?.statementImage ?? null)
   const galleryCards = GALLERIES.map((def, i) => ({
     ...def,
     title: galleries[i]?.title || def.title,
@@ -85,6 +94,37 @@ export default async function HomePage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      <div className={`container ${styles.pages}`}>
+        <section className={styles.pageSection} aria-labelledby="home-about-heading">
+          <div>
+            {hasAsset(aboutImage) ? (
+              <SanityImage
+                image={aboutImage}
+                fallbackAlt=""
+                sizes="(max-width: 52em) 100vw, 480px"
+                className={styles.pageImage}
+              />
+            ) : null}
+          </div>
+          <div className={styles.pageText}>
+            <h2 id="home-about-heading">{aboutTitle}</h2>
+            <p className={styles.excerpt}>{aboutExcerpt}</p>
+            <Link href="/about" className="text-link">
+              Read more<span className="visually-hidden"> on the {aboutTitle} page</span>
+            </Link>
+          </div>
+        </section>
+      </div>
+
+      <section className={styles.cta} aria-labelledby="home-cta-heading">
+        <div className="container">
+          <h2 id="home-cta-heading">Interested in a painting or a commission?</h2>
+          <Link href="/contact" className={`button ${styles.ctaButton}`}>
+            Get in touch
+          </Link>
+        </div>
       </section>
     </>
   )
